@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/VforVengeance/bingoUse/issues"
   },
-  "homepage": "https://github.com/VforVengeance/bingoUse#readme"
+  "homepage": "https://github.com/VforVengeance/bingoUse#readme",
+  "dependencies": {
+    "teamexercise": "^1.0.1"
+  }
 }
