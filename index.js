@@ -14,7 +14,8 @@ var player1 = createTable();
 var player2 = createTable();
 var player3 = createTable();
 
-bingo.init();
+bingo.init()
+
 
 var counter;
 var multiplayer = function(player){
