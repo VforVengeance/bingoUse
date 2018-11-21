@@ -1,15 +1,39 @@
 var bingo = require ("teamexercise");
 bingo.init();
 
-var createTable = function(){
-    var array = [];
+exports.createTable = function(){
     bingo.init();
     for(var i = 0; i<15; i++){
-        array[i] = bingo.extract();
+        bingo.extract();
     }
-    return array;
+    return bingo.getExtracted();
 }
 
+exports.createPlayers = function(n){
+    var players = [];
+    for (var i = 0; i < n; i++){
+        players.push(createTable());
+    }
+    return players;
+}
+
+exports.createMatch = function(players){
+    bingo.init();
+    while(true){
+        var extractedNumber = bingo.extract();
+        for(var i = 0; i<players.length; i++){
+            var index = players[i].indexOf(extractedNumber);
+            if(index >= 0){
+                players[i].splice(index, 1);
+                if(players[i].length === 0){
+                    console.log(bingo.getExtracted().length)
+                    return i;
+                }
+            }
+        }
+    }
+}
+/*
 var player1 = createTable();
 var player2 = createTable();
 var player3 = createTable();
@@ -47,3 +71,4 @@ else{
         console.log("il player3 ha vinto!!!");
     }  
 } 
+*/
