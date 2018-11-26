@@ -1,5 +1,6 @@
 var bingo = require ("teamexercise");
 bingo.init();
+console.log("test")
 
 exports.createTable = function(){
     bingo.init();
